@@ -56,7 +56,7 @@ function render(){
 //Grab info from search bar
 //run that info to youtube api
 
-$("#search-form").submit( (event) => {
+$("button").on('click',  (event) => {
     event.preventDefault();
     const userQuery = $('#user-query').val();
     queryYoutube(userQuery);
