@@ -1,0 +1,27 @@
+body{
+	background: black;
+	
+}
+h1{
+	color:  white;
+	text-align: center;
+}
+
+form{
+	text-align: center;
+}
+img{
+	margin: 5px;
+}
+
+.results{
+	margin-top: 50px;
+}
+.image-and-info-container {
+	width:70%;
+	margin: 20px;
+	background: white;
+}
+h3{
+	margin-left:5px;
+}
