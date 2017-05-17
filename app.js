@@ -1,34 +1,46 @@
 const appState = {
 
-	results: [],
-	youtubeRequestPage: "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBsVbwSx7O3-lG0IyK2nsd2qCr28MUcqrw&part=snippet&q="
+	results: null,
+	
+	baseURL: 
 
 
 }
 
 
+const baseURL = "https://www.googleapis.com/youtube/v3/search"
 
-
+let search  = state.youtubeRequestPage += search;
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////MOD FUNCTIONS//////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
-	function addResult (state, result){
+	// function addResult (state, result){
 		
-		state.results.push(results);
+	// 	state.results = result;
+
+	// }
+
+	function queryYoutube(searchTerm, query, ){
+		let query = {
+			s: searchTerm,
+			key: AIzaSyBsVbwSx7O3-lG0IyK2nsd2qCr28MUcqrw,
+			part: 'snippet'
+		}
+		
+		$.getJSON(baseURL, query, callback);
+
+
 	}
 
-	function queryYoutube(state, search){
-		console.log(search);
-		search  = state.youtubeRequestPage += search;
-		console.log(search);	
+	function cleanData(searchTerm, call){
+		
+		
 	}
-
-
 
 //////////////////////////////RENDER FUNCTION////////////////////
-function render(){
+	function render(){
 //take current app state and display on page
-}
+	}
 
 ///////////////////////////EVENT LISTENER///////////////////////////////////
 
