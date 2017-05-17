@@ -10,19 +10,22 @@ const baseURL = "https://www.googleapis.com/youtube/v3/search";
 
 function queryYoutube(searchTerm){
     let query = {
-        s: searchTerm,
+        q: searchTerm,
         key: 'AIzaSyBsVbwSx7O3-lG0IyK2nsd2qCr28MUcqrw',
         part: 'snippet'
     };
     
     $.getJSON(baseURL, query, (response) => {
-        const data = cleanData(response);
+        console.log(response);
+        let data = cleanData(response);
         addUrlToState(appState, data);
+        //console.log(appState);
+        render();
     });
 }
 
 function cleanData(response){
-    const data = [];
+    let data = [];
     response.items.forEach((i) => {
         data.push({
             "thumbnail": i.snippet.thumbnails.default.url,
@@ -59,6 +62,6 @@ function render(){
 $("#search-form").submit((event) => {
     event.preventDefault();
     const userQuery = $('#user-query').val();
+    $('#user-query').val("");
     queryYoutube(userQuery);
-    render();
 });
