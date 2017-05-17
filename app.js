@@ -22,7 +22,7 @@ function queryYoutube(searchTerm){
     
     $.getJSON(baseURL, query, (response) => {
         const data = cleanData(response);
-        addState(appState, data);
+        addUrlToState(appState, data);
     });
 }
 
@@ -35,12 +35,19 @@ function cleanData(response){
     return data;
 }
 
-function addState(state, data) {
-    state.results.push(data);
+function addUrlToState(state, data) {
+    state.results = (data);
 }
 
 //////////////////////////////RENDER FUNCTION////////////////////
 function render(){
+	let images = ""
+	appState.results.forEach((item) => {
+		console.log(item);
+	images += `<div class="image-and-info-container"><img src="${item}"></div>`
+	})
+	
+    $('.results').html(images);
     //take current app state and display on page
 }
 
@@ -53,7 +60,7 @@ $("#search-form").submit( (event) => {
     event.preventDefault();
     const userQuery = $('#user-query').val();
     queryYoutube(userQuery);
-    render()
+    render();
 })
 
 //<input type="text" name="search-box" id="user-query"/>
