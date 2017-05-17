@@ -1,7 +1,7 @@
 const appState = {
 
-	results: [],
-	youtubeRequestPage: "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBsVbwSx7O3-lG0IyK2nsd2qCr28MUcqrw&part=snippet&q="
+    results: [],
+    youtubeRequestPage: "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBsVbwSx7O3-lG0IyK2nsd2qCr28MUcqrw&part=snippet&q="
 
 
 }
@@ -12,16 +12,16 @@ const appState = {
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////MOD FUNCTIONS//////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////
-	function addResult (state, result){
-		
-		state.results.push(results);
-	}
+    function addResult (state, result){
+        
+        state.results.push(results);
+    }
 
-	function queryYoutube(state, search){
-		console.log(search);
-		search  = state.youtubeRequestPage += search;
-		console.log(search);	
-	}
+    function queryYoutube(state, search){
+        console.log(search);
+        search  = state.youtubeRequestPage += search;
+        console.log(search);	
+    }
 
 
 
